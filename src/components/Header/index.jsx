@@ -1,12 +1,10 @@
-﻿import logo from "./../img/logo.png";
-import cart from "./../img/cart.svg";
-import user from "./../img/user.svg";
+﻿import styles from "./Header.module.scss";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className="d-flex justify-between align-center p-40">
       <div className="d-flex align-center">
-        <img src={logo} alt="logo" width={40} height={40} />
+        <img src="img/logo.png" alt="logo" width={40} height={40} />
         <div>
           <h3 className="text-uppercase">React Sneakers</h3>
           <p className="opacity-5">The best sneaker's store</p>
@@ -14,12 +12,12 @@ const Header = () => {
       </div>
 
       <ul className="d-flex">
-        <li className="mr-30">
-          <img src={cart} alt="cart" />
+        <li className="mr-30 cu-p" onClick={props.onClickCart}>
+          <img src="img/cart.svg" alt="cart" />
           <span>40 $</span>
         </li>
         <li>
-          <img src={user} alt="user" />
+          <img src="img/user.svg" alt="user" />
         </li>
       </ul>
     </header>
